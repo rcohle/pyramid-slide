@@ -22,14 +22,31 @@
     </style>
 </head>
 <body>
-    <h1>Mario 4</h1>
-
+    <h1>Pyramid Slide</h1>
+<!-- 
     <p>When you say</p>
     <p><strong>Draw a pyramid</strong></p>
-    <p>I say:</p>
+    <p>I say:</p> -->
     <br>
 
-    <form id="draw-form">
+    <select>
+        Brick symbol:
+            <option value="#">#</option>
+            <option value="@">@</option>
+            <option value="X">X</option>
+            <option value="$">$</option>
+          </select>
+    
+    
+      <form>
+        How high?
+        <!-- copy-pasted from w3schools -->
+        <input type="range" name="height" oninput="drawPyramid(this.value)">
+        <input type="submit">
+      </form>
+
+
+   <!--  <form id="draw-form">
         <label>
             How high?
             <input type="text" id="height"/>
@@ -38,13 +55,13 @@
             </label>
         </label>
         <br><br>
-        <input type="submit" value="Draw a pyramid"/>
-    </form>
+        <!-- <input type="submit" value="Draw a pyramid"/> -->
+    </form> 
 
     <br><br>
 
     <div id="pyramid"></div>
 
-    <script src="mario.js"></script>
+    <script src="pyramid-slide.js"></script>
 </body>
 </html>

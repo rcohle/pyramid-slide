@@ -10,6 +10,8 @@ formElem.onsubmit = function(event) {
     // what happens if we don't do this?
     event.preventDefault();
 
+    
+
     // QUIZ
     // what happens if we don't do this?
     clearError();
@@ -75,6 +77,9 @@ function clearError(message) {
  */
 function drawPyramid(height) {
 
+    var pyramidCharacter = "#"; 
+   /*  need to add onchange and then pull the string from the select */
+
     // first, clear the old content
     document.getElementById("pyramid").innerHTML = "";
 
@@ -92,7 +97,7 @@ function drawPyramid(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += pyramidCharacter;
         }
 
         // make a <p> element for this row, and insert it into the #pyramid container
