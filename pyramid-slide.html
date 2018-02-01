@@ -2,63 +2,66 @@
 <html>
 <head>
     <style>
+
+        .brick {
+            background-color: darkgrey;
+            margin: 30px 100px;
+            font-weight: bold;
+            padding: 50px;
+            border: 2px solid;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        h1 {font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            font-size: 30px;
+            background-color: rgb(161, 39, 161);
+            color: lightgray;
+            font-weight: bolder;  
+            margin: 30px;
+            border-radius: 5px;
+            margin: 10px 75px;
+            
+        }
+        
         #pyramid {
             line-height: 0;
             font-size: 30px;
+            color: rgb(161, 39, 161);
+            font-weight:bolder;
+            margin: 10px 100px;
+            border: 2px solid;
+            border-radius: 5px;
+            background-color: lightgray;
         }
 
         body {
             font-family: "Courier New", monospace;
+            font-weight: bolder;
             text-align: center;
+            color: rgb(161, 39, 161);
+            margin: 10px 250px;
+            padding: 30px;
         }
 
-        .invalid-field {
-            border: 1px solid red;
-        }
-
-        .error-message {
-            color: red;
-        }
     </style>
+
 </head>
-<body>
+<body >
     <h1>Pyramid Slide</h1>
-<!-- 
-    <p>When you say</p>
-    <p><strong>Draw a pyramid</strong></p>
-    <p>I say:</p> -->
     <br>
-
-    <select>
-        Brick symbol:
-            <option value="#">#</option>
-            <option value="@">@</option>
-            <option value="X">X</option>
-            <option value="$">$</option>
-          </select>
+    <p class="brick">  Brick Symbol:
+      <select name="brickType" type='select' onchange="drawPyramid()">
+        <option value="#">#</option>
+        <option value="@">@</option>
+        <option value="X">X</option>
+        <option value="$">$</option>
+      </select>
     
-    
-      <form>
-        How high?
-        <!-- copy-pasted from w3schools -->
-        <input type="range" name="height" oninput="drawPyramid(this.value)">
-        <input type="submit">
-      </form>
-
-
-   <!--  <form id="draw-form">
-        <label>
-            How high?
-            <input type="text" id="height"/>
-            <label class="error-message">
-                <!-- If there was a user error, we will put a message in here -->
-            </label>
-        </label>
-        <br><br>
-        <!-- <input type="submit" value="Draw a pyramid"/> -->
-    </form> 
-
-    <br><br>
+      How high?
+	<input type="range" id="slider" value="10" min="1" max="20" oninput="drawPyramid(this.value)" onchange="pyramidHeight.value = slider.value" >
+    <output id="pyramidHeight">10</output>
+    </p>
 
     <div id="pyramid"></div>
 
